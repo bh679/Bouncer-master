@@ -32,6 +32,10 @@ up = false
 down = false
 check = false
 optimise = false
+
+topno = -1
+ran1 =  floor(random(3))
+ran2 =  floor(random(5))
 </string>
           </argument>
         </arguments>
@@ -111,9 +115,45 @@ if global.platform = Windows or global.platform = Mac
 
 block_merge(obj_sand)
 
+if optimise = true
+{
+    //make grass
+    i = 0
+    topno = -1
+    newtop = true
+    repeat(image_xscale)
+    {
+        //show_message(string(topno))
+        if position_meeting(x+i*BLOCKSIZE,y-BLOCKSIZE,wall_par) = true//check up
+        {
+            up = true
+            newtop = true 
+        }
+        else
+        {
+            //new peice of grass
+            if newtop = true
+            {
+                topno += 1
+                //set grass pos/size
+                topX[topno] = i*BLOCKSIZE
+                topSize[topno] = 1
+                newtop = false 
+                //show_message(string(topX[topno]) + ' ' + string(topSize[topno]))
+            }//extend piece fo grass
+            else
+            {
+                topSize[topno] += 1
+            }
+        }
+        i += 1
+    }
+}
+
 if optimise = false
    alarm[0] = 1
 optimise = true
+
 </string>
           </argument>
         </arguments>
@@ -137,6 +177,24 @@ optimise = true
           <argument>
             <kind>1</kind>
             <string>//draw_sprite_ext(spr_sand,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
+
+//if check = true
+//{
+    if global.debuggin draw_text(x,y,string(topno))
+    
+    if global.detail &gt;= GRAPHICMID and optimise = true and topno &gt;= 0
+    {
+        i = 0
+        //stretched grass
+        repeat(topno+1)
+        {
+            //angle += 1
+            //show_message(string(topSize[i]))
+            draw_sprite_tiled_custom_outline(spr_sand_outline,ran1,x+topX[i],y-16,topSize[i],1,0,image_blend,1,true)
+            i += 1
+        }
+    }
+//}
 
 draw_sprite_tiled_custom(spr_sand,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,true)
 if check = true and global.detail &gt;= GRAPHICMID//!(global.platform = iOS or global.platform = HTML5)

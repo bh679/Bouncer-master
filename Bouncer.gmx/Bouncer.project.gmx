@@ -175,6 +175,7 @@
           <sprite>sprites\spr_glass</sprite>
           <sprite>sprites\spr_dirt</sprite>
           <sprite>sprites\spr_sand</sprite>
+          <sprite>sprites\spr_sand_outline</sprite>
           <sprite>sprites\spr_wood</sprite>
           <sprite>sprites\spr_lava_top_old</sprite>
         </sprites>
@@ -415,6 +416,7 @@
     </scripts>
     <scripts name="Display scripts">
       <script>scripts\draw_sprite_tiled_custom.gml</script>
+      <script>scripts\draw_sprite_tiled_custom_outline.gml</script>
       <script>scripts\MouseInBox.gml</script>
       <script>scripts\draw_text_shadow.gml</script>
       <script>scripts\draw_text_shadow_transformed.gml</script>

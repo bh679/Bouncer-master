@@ -212,7 +212,7 @@ if check = true
         }
     }
 }
-if global.detail &gt;= GRAPHICHIGH and check = true// and !(global.platform = iOS or global.platform = HTML5)
+/*if global.detail &gt;= GRAPHICHIGH and check = true// and !(global.platform = iOS or global.platform = HTML5)
 {
     if left = false 
       draw_sprite(spr_wood,1,x,y)
@@ -238,7 +238,7 @@ if global.detail &gt;= GRAPHICHIGH and check = true// and !(global.platform = iO
       //dirt
     if down = false 
       draw_sprite_ext(spr_dirt,ran1+3,x,y+16,1,1+ran2/4,0,noone,1)
-}
+}*/
 </string>
           </argument>
         </arguments>
