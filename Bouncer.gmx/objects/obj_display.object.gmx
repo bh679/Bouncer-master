@@ -156,6 +156,10 @@ red = 154
 green = 217
 blue = 234
 skycolour = make_color_rgb(red,green,blue)
+
+//fog
+init_fog();
+glowcounter = 0
 </string>
           </argument>
         </arguments>
@@ -590,6 +594,7 @@ randomize()
           <argument>
             <kind>1</kind>
             <string>
+
 if RoomIsLevel()
     stage = Levels.stage[Levels.roomindex]
 else if RoomIsStage()
@@ -1061,25 +1066,27 @@ if stage = 2
     draw_sprite_ext(spr_windmill,0,416,182,1,1,pos[0]/4,noone,1)//blades
 }
 
+//fog
+draw_fog()
 
 //exit glow, boarder
+glowcounter+=1/90
 image_alpha = 1
 draw_set_color(c_blue)
-boarderalpha = (sin(pos[0]/10)/2+1)/2
+boarderalpha = (sin(pos[0]/10)/2+1)//2
+boarderred = min(255 - sin(glowcounter)*100,255)
+boardergreen = min(255 - cos(glowcounter)*100,255)
+boarderblue = 255//min(255 - sin(glowcounter),255)
+boardercolor = make_color(boarderred,boardergreen,boarderblue)
 //top
-draw_sprite_ext(spr_gradient,0,0,0,room_width,1,0,noone,boarderalpha)
+draw_sprite_ext(spr_gradient,0,0,0,room_width,1,0,boardercolor,boarderalpha)
 //bottom
-draw_sprite_ext(spr_gradient,0,0,room_height,room_width,-1,0,noone,boarderalpha)
+draw_sprite_ext(spr_gradient,0,0,room_height,room_width,-1,0,boardercolor,boarderalpha)
 //left
-draw_sprite_ext(spr_gradient,0,0,0,room_height,-1,-90,noone,boarderalpha)
+draw_sprite_ext(spr_gradient,0,0,0,room_height,-1,-90,boardercolor,boarderalpha)
 //right
-draw_sprite_ext(spr_gradient,0,room_width,0,room_height,1,-90,noone,boarderalpha)
-//i = 0
-/*repeat(Emptys)
-{
-    draw_rectangle(EmptyX[i]-16,EmptyY[i]-16,EmptyX[i]+16,EmptyY[i]+16,false)
-    i += 1
-}
+draw_sprite_ext(spr_gradient,0,room_width,0,room_height,1,-90,boardercolor,boarderalpha)
+
 
 </string>
           </argument>

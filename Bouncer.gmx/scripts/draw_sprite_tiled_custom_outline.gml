@@ -43,8 +43,8 @@ for(wx = 0; wx < _xscale; wx+=1)
                 wx += 1
             }
             //draw_set_color(c_red)
-            draw_text(_x+tmpx,_y+tmpy-BLOCKSIZE,"+"+string(stretchx))
-            draw_text(_x+tmpx,_y+tmpy-BLOCKSIZE*2,"<"+string(_xscale))
+            //draw_text(_x+tmpx,_y+tmpy-BLOCKSIZE,"+"+string(stretchx))
+            //draw_text(_x+tmpx,_y+tmpy-BLOCKSIZE*2,"<"+string(_xscale))
             draw_sprite_ext(_sprite,ran,_x+tmpx,_y+tmpy+BLOCKSIZE,1+stretchx,1+ran,0,_blend,_alpha)
         }
             

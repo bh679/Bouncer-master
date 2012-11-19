@@ -270,6 +270,7 @@
     <sprite>sprites\spr_ball_burn</sprite>
     <sprite>sprites\spr_ball_burn_old</sprite>
     <sprite>sprites\spr_start</sprite>
+    <sprite>sprites\spr_fog</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_menu</background>
@@ -449,6 +450,10 @@
     <script>scripts\mouse_yroom.gml</script>
     <scripts name="particalSystem">
       <script>scripts\particalSystem.gml</script>
+      <scripts name="fog">
+        <script>scripts\draw_fog.gml</script>
+        <script>scripts\init_fog.gml</script>
+      </scripts>
     </scripts>
     <script>scripts\GetVineLength.gml</script>
     <script>scripts\GetAirHeight.gml</script>
