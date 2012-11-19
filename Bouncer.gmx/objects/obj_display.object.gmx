@@ -1026,8 +1026,9 @@ if global.detail &gt;= GRAPHICHIGH//!(global.platform = iOS or global.platform =
 //background
 if background[stage] != noone
 {
-   bgscale = room_height/background_get_height(background[stage])
-   draw_background_ext(background[stage],0,0,bgscale,bgscale,0,noone,1)
+   xbgscale = room_width/background_get_width(background[stage])
+   ybgscale = room_height/background_get_height(background[stage])
+   draw_background_ext(background[stage],0,0,xbgscale,ybgscale,0,noone,1)
 }
 
 //mid background

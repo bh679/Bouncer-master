@@ -133,7 +133,7 @@ skycolour = make_color_rgb(global.stage*40,global.stage*40,global.stage*40)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if global.detail = GRAPHICHIGHEST//!(global.platform = iOS)
+            <string>if global.detail = GRAPHICHIGHEST &amp;&amp; !(global.platform = iOS)
 {
     i = 0
     repeat(size)
@@ -158,5 +158,8 @@ skycolour = make_color_rgb(global.stage*40,global.stage*40,global.stage*40)
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
