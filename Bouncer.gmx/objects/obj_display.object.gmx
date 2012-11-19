@@ -46,7 +46,7 @@ else if room = newstage0
     
     
 //background
-background[0] = bg_mountain
+background[0] = background_1//bg_mountain
 background[1] = bg_mountain
 background[2] = bg_mountain
 background[3] = bg_mountain2
@@ -1025,19 +1025,22 @@ if global.detail &gt;= GRAPHICHIGH//!(global.platform = iOS or global.platform =
 
 //background
 if background[stage] != noone
-draw_background(background[stage],0,0)
+{
+   bgscale = room_height/background_get_height(background[stage])
+   draw_background_ext(background[stage],0,0,bgscale,bgscale,0,noone,1)
+}
 
 //mid background
-if midground[stage] != noone
-draw_background(midground[stage],0,0)
+//if midground[stage] != noone
+//draw_background(midground[stage],0,0)
 
 
 //trees-background
-if trees[stage] != noone
-draw_background(trees[stage],0,0)
+//if trees[stage] != noone
+//draw_background(trees[stage],0,0)
 
 //draw leaves
-if global.detail = GRAPHICHIGHEST and (trees[stage] = bg_trees1 or  trees[stage] = bg_trees2 
+/*if global.detail = GRAPHICHIGHEST and (trees[stage] = bg_trees1 or  trees[stage] = bg_trees2 
 or trees[stage] = bg_trees3 or  trees[stage] = bg_trees4
 or trees[stage] = bg_trees5 or  trees[stage] = bg_trees6)
 {
@@ -1052,7 +1055,7 @@ or trees[stage] = bg_trees5 or  trees[stage] = bg_trees6)
         i+= 1
     }
 
-}
+}*/
     
 
 //extra background
@@ -1102,5 +1105,8 @@ draw_sprite_ext(spr_gradient,0,room_width,0,room_height,1,-90,boardercolor,board
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
