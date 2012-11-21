@@ -141,12 +141,12 @@ optimise = true
           <argument>
             <kind>1</kind>
             <string>//draw_sprite(spr_wood,0,x,y)
-if up = false and  down = false
+//if up = false and  down = false
 //  draw_sprite_ext(spr_wood,0,x,y+15,image_yscale,image_xscale,90,noone,1)
     draw_sprite_tiled_custom(spr_wood,0,x,y+16,image_xscale,image_yscale,90,image_blend,image_alpha,true)
-else
+//else
 //  draw_sprite_ext(spr_wood,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-    draw_sprite_tiled_custom(spr_wood,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,true)
+//    draw_sprite_tiled_custom(spr_wood,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,true)
   
 if check = true and global.detail &gt;= GRAPHICMID//!(global.platform = iOS or global.platform = HTML5)
 {
@@ -176,5 +176,8 @@ if check = true and global.detail &gt;= GRAPHICMID//!(global.platform = iOS or g
   <PhysicsObjectGroup>0</PhysicsObjectGroup>
   <PhysicsObjectLinearDamping>0.100000001490116</PhysicsObjectLinearDamping>
   <PhysicsObjectAngularDamping>0.100000001490116</PhysicsObjectAngularDamping>
+  <PhysicsObjectFriction>0.200000002980232</PhysicsObjectFriction>
+  <PhysicsObjectAwake>-1</PhysicsObjectAwake>
+  <PhysicsObjectKinematic>0</PhysicsObjectKinematic>
   <PhysicsShapePoints/>
 </object>
