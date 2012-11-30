@@ -328,6 +328,8 @@
           <script>scripts\tips_silly.gml</script>
           <script>scripts\tips_jokes.gml</script>
           <script>scripts\tips_jokesFromSash.gml</script>
+          <script>scripts\tips_jokesFromSash_18.gml</script>
+          <script>scripts\tips_18.gml</script>
           <script>scripts\tips_meinfo.gml</script>
         </scripts>
         <scripts name="old">
@@ -477,6 +479,7 @@
   <fonts name="fonts">
     <font>fonts\Forte_options</font>
     <font>fonts\Forte_Splash</font>
+    <font>fonts\font_splashbhg</font>
     <font>fonts\Forte_24</font>
     <fonts name="Highscore">
       <font>fonts\fnt_highscoreBig</font>
@@ -488,6 +491,7 @@
     <font>fonts\Tahoma_R_14</font>
     <font>fonts\fontTipSmall</font>
     <font>fonts\fontTipBig</font>
+    <font>fonts\fontTipMid</font>
     <font>fonts\fontBall</font>
     <font>fonts\MenuFont</font>
     <font>fonts\MenuFontSmall</font>
@@ -736,7 +740,9 @@
       <room>rooms\stage_selectCustom</room>
     </rooms>
   </rooms>
-  <constants number="52">
+  <constants number="54">
+    <constant name="_SCORE">"score"</constant>
+    <constant name="_TIPS">"tips"</constant>
     <constant name="c_brown">make_color(126,64,0)</constant>
     <constant name="c_dkgreen">make_color(0,64,0)</constant>
     <constant name="WORLDSCALE">1</constant>

@@ -172,7 +172,7 @@ char_R[4,2] =  true/*
         <arguments>
           <argument>
             <kind>12</kind>
-            <font>-100</font>
+            <font>font_splashbhg</font>
           </argument>
           <argument>
             <kind>4</kind>
@@ -295,6 +295,7 @@ if redraw_background = true
                 {
                     ran1 = random(15) + random(50)*(floor(random(20)) = 1)
                     red = make_color(random(255),random(55),random(55))
+                    black = make_color(random(15),random(15),random(15))
                     box[x,y] = merge_color(red,black,min(1,max((timecheck - distanceToCenter)/distanceToCenter,0)))
                 }
                

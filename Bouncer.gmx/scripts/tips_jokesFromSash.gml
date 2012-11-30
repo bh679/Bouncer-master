@@ -27,22 +27,13 @@ global.tips += 1
 global.tip[global.tips] = "Dear diary, my pen is out of ink."
 global.tips += 1
 
-global.tip[global.tips] = "My Girlfriend says I'm a Pedophile, but what does she know? She's 8"
-global.tips += 1
-
 global.tip[global.tips] = "No-One Deserves to be on this Rope but Me!"
 global.tips += 1
 
 global.tip[global.tips] = "Life is too short to remove a USB safely."
 global.tips += 1
 
-global.tip[global.tips] = "I'm gonna kill myself or die trying!"
-global.tips += 1
-
 global.tip[global.tips] = 'I hate when I'+"'"+'m at someone'+"'"+'s house and they ask stupid questions like "Who are you?" and "Is that a gun?"'
-global.tips += 1
-
-global.tip[global.tips] = "Hitler wasn't all that bad. After all, he did kill Hitler."
 global.tips += 1
 
 global.tip[global.tips] = "The trouble with quotes on the internet is that it's difficult to determine whether or not they're genuine. ~ Abraham Lincoln"
@@ -58,9 +49,6 @@ global.tip[global.tips] = "Studies show that 100% of the people that drink water
 global.tips += 1
 
 global.tip[global.tips] = "Studies show that the leading cause of death, is birth"
-global.tips += 1
-
-global.tip[global.tips] = "I have a dig bick. You that read wrong. You read that wrong, too."
 global.tips += 1
 
 global.tip[global.tips] = "Chuck Norris threw a grenade and killed fifty people. Then it exploded"
@@ -100,9 +88,6 @@ global.tip[global.tips] = "Roses are red, my name is Dave, this poem makes no se
 global.tips += 1
 
 global.tip[global.tips] = "How do blind people know when to stop wiping?"
-global.tips += 1
-
-global.tip[global.tips] = "My grandfather died in a concentration camp. He fell off a watchtower"
 global.tips += 1
 
 global.tip[global.tips] = "Why did Sarah spill her drink? The plane she was on crashed."
@@ -150,9 +135,6 @@ global.tips += 1
 global.tip[global.tips] = "The only easy day was yesterday."
 global.tips += 1
 
-global.tip[global.tips] = "If there's no God, why do people believe in God? Christians: 1 Atheists: 0"
-global.tips += 1
-
 global.tip[global.tips] = "If you're going number 2, throw some toilet paper in first and you won't get any splash-back"
 global.tips += 1
 
@@ -185,6 +167,8 @@ global.tips += 1
 
 global.tip[global.tips] = "When people win a timed spending spree, why don't they just get gift cards?"
 global.tips += 1
+
+tips_jokesFromSash_18();
 
 global.SashesTips += global.tips
 //return SashesTips;

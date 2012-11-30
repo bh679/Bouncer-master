@@ -1105,8 +1105,8 @@ if global.IsLevel and global.testmode = false and no_tutorial = 0 and global.ski
         draw_set_font(TutFontBig)
         draw_set_halign(fa_middle)
         draw_set_alpha((sin(obj_ball.continuousCounter/22)/10+0.90))
-        if global.platform = iOS
-           draw_text_shadow(room_width/2, room_height/2, "Touch!", c_white,c_black,1)
+        if global.platform = iOS and Levels.roomindex &lt; 9
+           draw_text_shadow(room_width/2, room_height/2, "", c_white,c_black,1);//draw_text_shadow(room_width/2, room_height/2, "Touch!", c_white,c_black,1)
         else
         {
             if !obj_ctrl.DisplayEndStats

@@ -47,53 +47,53 @@ else if room = newstage0
     
 //background
 background[0] = background_1//bg_mountain
-background[1] = bg_mountain
-background[2] = bg_mountain
-background[3] = bg_mountain2
-background[4] = bg_mountain3
-background[5] = bg_mountain4
-background[6] = bg_mountain4
-background[7] = bg_mountain5
+background[1] = background_1//bg_mountain
+background[2] = background_1//bg_mountain
+background[3] = background_1//bg_mountain2
+background[4] = background_1//bg_mountain3
+background[5] = background_1//bg_mountain4
+background[6] = background_1//bg_mountain4
+background[7] = background_1//bg_mountain5
 
 //midground
 midground[0] = noone
 midground[1] = noone
 midground[2] = noone//bg_windmill
-midground[3] = bg_steelworks_forground
-midground[4] = bg_steelworks_forground
-midground[5] = bg_steelworks_forground2
-midground[6] = bg_steelworks_forground2
-midground[7] = bg_steelworks_forground3
+midground[3] = noone//bg_steelworks_forground
+midground[4] = noone//bg_steelworks_forground
+midground[5] = noone//bg_steelworks_forground2
+midground[6] = noone//bg_steelworks_forground2
+midground[7] = noone//bg_steelworks_forground3
 
 //trees
-trees[0] = bg_trees1
-trees[1] = bg_trees2
-trees[2] = bg_trees3
-trees[3] = bg_trees4
-trees[4] = bg_trees5
-trees[5] = bg_trees6
-trees[6] = bg_trees6
-trees[7] = bg_trees6
+trees[0] = noone//bg_trees1
+trees[1] = noone//bg_trees2
+trees[2] = noone//bg_trees3
+trees[3] = noone//bg_trees4
+trees[4] = noone//bg_trees5
+trees[5] = noone//bg_trees6
+trees[6] = noone//bg_trees6
+trees[7] = noone//bg_trees6
 
 //fore-background
 fence[0] = noone
 fence[1] = noone
 fence[2] = noone
-fence[3] = bg_fence1
-fence[4] = bg_fence1
-fence[5] = bg_fence2
-fence[6] = bg_fence2
-fence[7] = bg_fence2
+fence[3] = noone//bg_fence1
+fence[4] = noone//bg_fence1
+fence[5] = noone//bg_fence2
+fence[6] = noone//bg_fence2
+fence[7] = noone//bg_fence2
 
 //extras-background
 ebackground[0] = noone
 ebackground[1] = noone
 ebackground[2] = noone//bg_windmill
-ebackground[3] = bg_trees4
-ebackground[4] = bg_trees5
-ebackground[5] = bg_trees6
-ebackground[6] = bg_trees6
-ebackground[7] = bg_trees6
+ebackground[3] = noone//bg_trees4
+ebackground[4] = noone//bg_trees5
+ebackground[5] = noone//bg_trees6
+ebackground[6] = noone//bg_trees6
+ebackground[7] = noone//bg_trees6
 
 
 SunDis[0] = room_height/3/2
@@ -1063,12 +1063,12 @@ or trees[stage] = bg_trees5 or  trees[stage] = bg_trees6)
 if fence[stage] != noone
     draw_background(fence[stage],0,0)
     
-//windmill
+/*/windmill
 if stage = 2
 {
     draw_sprite(spr_windmill,1,416,182)//stange
     draw_sprite_ext(spr_windmill,0,416,182,1,1,pos[0]/4,noone,1)//blades
-}
+}*/
 
 //fog
 draw_fog()

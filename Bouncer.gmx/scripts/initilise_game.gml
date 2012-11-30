@@ -24,6 +24,7 @@ global.cogangle = 0
 global.load = false
 global.debuggin = false
 global.buttonclicked = false
+global.endUI = _SCORE//_TIPS
 
 if global.platform = html5
     window_set_fullscreen(true)

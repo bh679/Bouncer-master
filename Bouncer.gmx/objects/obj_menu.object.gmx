@@ -78,6 +78,8 @@ mouse_lasty = mouse_y
 menuLength = (menuItemY[0]-menuGap/2 - menuItemY[3]+menuItemHeight+menuGap/2)/(stages/2)
 scrolVisiblity = 0.3
 highlightScroll = false
+minScrollY = menuItemY[0]
+maxScrollY = menuItemY[0] + (menuItemHeight*2+menuGap)*2
 </string>
           </argument>
         </arguments>
@@ -440,7 +442,8 @@ else //not hidden
         draw_rectangle(room_width/2+width+10,menuItemY[0]-menuGap/2,room_width/2+width+10+10,menuItemY[3]+menuItemHeight,true)
         draw_set_alpha(0.2+scrolVisiblity*2)
         //move
-        menuPosition = menuItemY[0]+(menuItemHeight*2+menuGap)*(stageDisplayed)/2
+        if mouse_check_button(mb_left)
+            menuPosition = max(minScrollY,min(mouse_y,maxScrollY))//menuItemY[0]+(menuItemHeight*2+menuGap)*(stageDisplayed)/2
         draw_rectangle(room_width/2+width+10,menuPosition-menuLength/2,room_width/2+width+10+10,menuPosition+menuLength/2,false)
         //fade
         if scrolVisiblity &gt; 0

@@ -13,13 +13,7 @@ global.tips += 1
 global.tip[global.tips] = "Atheism is a non- prophet organization."
 global.tips += 1
 
-global.tip[global.tips] = "I was gana make a gay joke, butt f**k it."
-global.tips += 1
-
 global.tip[global.tips] = "How does Moses make his tea? Hebrews it."
-global.tips += 1
-
-global.tip[global.tips] = "Vagina jokes arent funny. Period."
 global.tips += 1
 
 global.tip[global.tips] = "Hard work never killed anybody, but why take a chance?"
@@ -41,9 +35,6 @@ global.tip[global.tips] = "There are three kinds of people in the world, those w
 global.tips += 1
 
 global.tip[global.tips] = "I will never forget the last thing my grandfather said to be before he kicked the bucket: 'Hey grandson... how far do you think i can kick this bucket?'"
-global.tips += 1
-
-global.tip[global.tips] = "Life is short, fiddle with your willy while you can."
 global.tips += 1
 
 global.tip[global.tips] = "Im not a stalker, but your shower needs a clean."
@@ -130,28 +121,22 @@ global.tips += 1
 global.tip[global.tips] = "What did one plate say to the other? Lunch is on me."
 global.tips += 1
 
-global.tip[global.tips] = "there are 2 fish in a tank, one says to the other 'how do you drive this thing'"
+global.tip[global.tips] = "There are 2 fish in a tank, one says to the other 'how do you drive this thing'"
 global.tips += 1
 
 global.tip[global.tips] = "I wondered why the baseball kept getting bigger. Then it hit me."
 global.tips += 1
 
-global.tip[global.tips] = "what did one ocean say to another ocean? nothing, they just waved"
+global.tip[global.tips] = "What did one ocean say to another ocean? nothing, they just waved"
 global.tips += 1
 
 global.tip[global.tips] = "Did you hear about the wooden car with the wooden wheels and the wooden engine? It wooden go."
-global.tips += 1
-
-global.tip[global.tips] = "My new party trick. I swallow two pieces of string and an hour later they come out of my arse tied together..... Seriously. I shit you knot"
 global.tips += 1
 
 global.tip[global.tips] = "I had a crazy dream that I weighed less than a thousandth of a gram. I was like, 0mg!"
 global.tips += 1
 
 global.tip[global.tips] = "I just saw a film about a cloudy day but there were too many people in it. It was overcast"
-global.tips += 1
-
-global.tip[global.tips] = "The wife complains I'm never 'spontaneous' or surprise her anymore..So I shat in her handbag."
 global.tips += 1
 
 global.tip[global.tips] = "What happens if you hook up two 9V batteries to a raisin? You get an electric current."
@@ -164,15 +149,6 @@ global.tip[global.tips] = "The doctor said my voice box is damaged and I may nev
 global.tips += 1
 
 global.tip[global.tips] = "Won every prize at this year's national janitor competition. It was a clean sweep."
-global.tips += 1
-
-global.tip[global.tips] = "I've had many relationships with fat chicks.They never work out."
-global.tips += 1
-
-global.tip[global.tips] = '"Apple founder to be cremated" Job well done.'
-global.tips += 1
-
-global.tip[global.tips] = "I was sitting at my desk today when my co-worker took a dump on my head. Naturally, I carried on under turd"
 global.tips += 1
 
 global.tip[global.tips] = "A work colleague asked me if I'd take part in a cricket match for cancer. Thought to myself thats not much of a prize."
@@ -214,28 +190,16 @@ global.tips += 1
 global.tip[global.tips] = "A seminar on Time Travel will be held two weeks ago."
 global.tips += 1
 
-global.tip[global.tips] = "Dyslexic atheists believe there is no Dog"
-global.tips += 1
-
-global.tip[global.tips] = "I wouldn't be caught dead with a necrophiliac."
-global.tips += 1
-
 global.tip[global.tips] = "A pizza of radius z and thickness a has a volume of pi z z a"
 global.tips += 1
 
 global.tip[global.tips] = "Ham and Eggs: A day's work for a chicken; A lifetime commitment for a pig."
 global.tips += 1
 
-global.tip[global.tips] = "Locked my keys in my car outside an abortion clinic. Turns out they get really pissed when you go in and ask them for a coat hanger."
-global.tips += 1
-
 global.tip[global.tips] = "Am I ambivalent? Well, yes and no."
 global.tips += 1
 
-global.tip[global.tips] = "Blind people shouldn't sky dive. It scares the $%@& out of their dogs."
-global.tips += 1
-
-global.tip[global.tips] = "So, I've just been diagnosed with HIV. My doctor has advised me to remain positive. Can't see how that's going to help."
+global.tip[global.tips] = "Blind people shouldn't sky dive. It scares the hell out of their dogs."
 global.tips += 1
 
 global.tip[global.tips] = "How do you tell when you run out of invisible ink?"
@@ -257,9 +221,6 @@ global.tip[global.tips] = "A guy walked into a bar. He was treated for minor inj
 global.tips += 1
 
 global.tip[global.tips] = 'A girl phoned me the other day and said "Come on over, there is nobody home." I went over. Nobody was home.'
-global.tips += 1
-
-global.tip[global.tips] = "Had a threesome the other night. There were a couple of no shows, but I still had a good time."
 global.tips += 1
 
 global.tip[global.tips] = "In the UK, a person is hit by a car once every 30 seconds. Poor guy!"
@@ -296,6 +257,7 @@ global.tip[global.tips] = "I complimented my friend on their awesome mustache th
 global.tips += 1
 
 tips_jokesFromSash();
+tips_18();
 /*
 
 

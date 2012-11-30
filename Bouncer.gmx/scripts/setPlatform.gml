@@ -13,7 +13,7 @@ switch(os_type)
          break;
     default: global.platform = html5
 }
-   
+   global.platform = iOS
 switch(global.platform)
 {
     case iOS: global.detail = GRAPHICLOW
