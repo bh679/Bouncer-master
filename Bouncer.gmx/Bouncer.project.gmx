@@ -557,6 +557,7 @@
     <object>objects\custom_par</object>
     <object>objects\obj_ball</object>
     <object>objects\obj_deadball</object>
+    <object>objects\obj_splash_brennanhattongames</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
@@ -565,6 +566,7 @@
   <rooms name="rooms">
     <rooms name="Menu">
       <room>rooms\startroom</room>
+      <room>rooms\rm_splash_bhg</room>
       <room>rooms\rm_splash</room>
       <room>rooms\newstage0</room>
     </rooms>
@@ -734,7 +736,9 @@
       <room>rooms\stage_selectCustom</room>
     </rooms>
   </rooms>
-  <constants number="50">
+  <constants number="52">
+    <constant name="c_brown">make_color(126,64,0)</constant>
+    <constant name="c_dkgreen">make_color(0,64,0)</constant>
     <constant name="WORLDSCALE">1</constant>
     <constant name="WINROOM">newstage0</constant>
     <constant name="GRAPHICHIGHEST">4</constant>
@@ -761,7 +765,7 @@
     <constant name="TIPSREPEATLIM">50</constant>
     <constant name="STRVOICES">"Voices"</constant>
     <constant name="STRMUTE">"Mute"</constant>
-    <constant name="STRFULLSCREEN">"Fullscreen (coming soon)"</constant>
+    <constant name="STRFULLSCREEN">"Fullscreen"</constant>
     <constant name="STRGRAPHICS">"Graphics"</constant>
     <constant name="STRCUSTOM">"Custom Stage"</constant>
     <constant name="STRSTAGE">"Stage"</constant>

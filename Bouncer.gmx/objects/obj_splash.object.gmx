@@ -26,6 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>c = 0
+draw_set_halign(fa_left)
 </string>
           </argument>
         </arguments>

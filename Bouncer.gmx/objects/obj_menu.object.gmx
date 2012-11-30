@@ -242,9 +242,10 @@ if menu = "stages"
         if mouse_check_button(mb_left)
         {
             if (mouse_y - menuItemY[0]) &gt; 0
-               stageDisplayed = floor((((mouse_y - menuItemY[0])*2) / ((menuItemHeight+menuGap/2)) mod stages))
+               stageDisplayed = floor((((mouse_y - menuItemY[0])*2) / ((menuItemHeight*2+menuGap/2)) mod (stages - 4)))
             else
                 stageDisplayed = 0
+                
             menuItem[0] = STRSTAGE + " " + string((stageDisplayed+stages*2) mod stages+1)
             menuItem[1] = STRSTAGE + " " + string((stageDisplayed+stages*2+1) mod stages+1)
             menuItem[2] = STRSTAGE + " " + string((stageDisplayed+stages*2+2) mod stages+1)
@@ -439,7 +440,7 @@ else //not hidden
         draw_rectangle(room_width/2+width+10,menuItemY[0]-menuGap/2,room_width/2+width+10+10,menuItemY[3]+menuItemHeight,true)
         draw_set_alpha(0.2+scrolVisiblity*2)
         //move
-        menuPosition = menuItemY[0]+(menuItemHeight+menuGap/2)*(stageDisplayed)/2
+        menuPosition = menuItemY[0]+(menuItemHeight*2+menuGap)*(stageDisplayed)/2
         draw_rectangle(room_width/2+width+10,menuPosition-menuLength/2,room_width/2+width+10+10,menuPosition+menuLength/2,false)
         //fade
         if scrolVisiblity &gt; 0

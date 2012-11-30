@@ -900,7 +900,7 @@ if global.trial = false
 global.total_levels = roomindex
 
 
-room_goto(rm_splash)
+room_goto(rm_splash_bhg)
 </string>
           </argument>
         </arguments>

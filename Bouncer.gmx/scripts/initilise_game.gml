@@ -1,5 +1,5 @@
 
-global.release = false
+global.release = true
 global.detail = 0
 setPlatform()
 set_tips()

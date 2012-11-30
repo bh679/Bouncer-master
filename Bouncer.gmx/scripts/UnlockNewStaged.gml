@@ -5,6 +5,6 @@ if Levels.unlocked[Levels.LevelsInStage[Levels.currstage]+1] = false
     if CalcAvgLevelScore(Levels.currstage) >= Levels.AverageScorePass[Levels.currstage]
     {
         Levels.unlocked[Levels.LevelsInStage[global.stage]+1] = true
-        show_message("Unlocked new stage BITCHES!!!")
+        show_debug_message("Unlocked new stage!!!")
     }
 }  
