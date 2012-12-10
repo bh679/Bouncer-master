@@ -394,6 +394,7 @@
       </scripts>
       <script>scripts\unlock_level.gml</script>
       <script>scripts\LevelsBeforeStage.gml</script>
+      <script>scripts\go_to_menu.gml</script>
     </scripts>
     <scripts name="Display scripts">
       <script>scripts\draw_sprite_tiled_custom.gml</script>
@@ -428,16 +429,16 @@
     <script>scripts\changeGraphics.gml</script>
     <script>scripts\mouse_xroom.gml</script>
     <script>scripts\mouse_yroom.gml</script>
+    <scripts name="fog">
+      <script>scripts\draw_fog.gml</script>
+      <script>scripts\init_fog.gml</script>
+      <script>scripts\draw_generic_fog.gml</script>
+      <script>scripts\draw_fog_alpha.gml</script>
+      <script>scripts\draw_fog_focusy.gml</script>
+      <script>scripts\draw_fog_bellow.gml</script>
+    </scripts>
     <scripts name="particalSystem">
       <script>scripts\particalSystem.gml</script>
-      <scripts name="fog">
-        <script>scripts\draw_fog.gml</script>
-        <script>scripts\init_fog.gml</script>
-        <script>scripts\draw_generic_fog.gml</script>
-        <script>scripts\draw_fog_alpha.gml</script>
-        <script>scripts\draw_fog_focusy.gml</script>
-        <script>scripts\draw_fog_bellow.gml</script>
-      </scripts>
     </scripts>
     <script>scripts\GetVineLength.gml</script>
     <script>scripts\GetAirHeight.gml</script>
@@ -453,7 +454,6 @@
     <script>scripts\restart_edit.gml</script>
     <script>scripts\scr_new_stage.gml</script>
     <script>scripts\calculate_total_score.gml</script>
-    <script>scripts\go_to_menu.gml</script>
     <script>scripts\script30.gml</script>
     <script>scripts\script43.gml</script>
     <script>scripts\script122.gml</script>

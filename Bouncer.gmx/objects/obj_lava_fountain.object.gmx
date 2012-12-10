@@ -146,7 +146,7 @@ splash = 0
     //partical systme
     splash = part_system_create()
     numberOfParticalsAStep = 5 
-    if global.platform = iOS or global.platform = HTML5
+    if global.detail &gt;= GRAPHICHIGH//global.platform = iOS or global.platform = HTML5
         numberOfParticalsAStep = 1 
     //particals
     particle = part_type_create()

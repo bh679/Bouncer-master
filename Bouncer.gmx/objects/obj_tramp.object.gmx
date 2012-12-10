@@ -32,6 +32,8 @@ up = false
 down = false
 check = false
 optimise = false
+image_speed = 0
+image_index = random(100)
 </string>
           </argument>
         </arguments>
@@ -141,9 +143,9 @@ optimise = true
 
 if up = false and  down = false
 //  draw_sprite_ext(spr_tramp,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
-    draw_sprite_tiled_custom(spr_tramp,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,false)
+    draw_sprite_tiled_custom(spr_tramp,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,false)
 else
-    draw_sprite_tiled_custom(spr_tramp,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,false)
+    draw_sprite_tiled_custom(spr_tramp,image_index,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha,false)
 //  draw_sprite_ext(spr_tramp,0,x,y,image_xscale,image_yscale,image_angle,image_blend,image_alpha)
   
 if check = true and global.detail &gt;= GRAPHICMID//!(global.platform = iOS)

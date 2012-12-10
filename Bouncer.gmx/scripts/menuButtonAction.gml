@@ -8,9 +8,14 @@ tmpMenuItem = argument0
 if tmpMenuItem = STRPLAY
 {
     Levels.roomindex = 1
+    do
+    {
+        Levels.roomindex+= 1
+    }
+    until(Levels.unlocked[Levels.roomindex+1] = false)
     with(obj_new_level)
         {instance_destroy()}
-    room = Levels.level[1]
+    room = Levels.level[Levels.roomindex]
 } else
 
 //options menu

@@ -44,7 +44,7 @@ soilIndexArray[4] = 9
 
 menuCount = 0
 
-menuTime = 4*room_speed
+menuTime = 3.1*room_speed
 </string>
           </argument>
         </arguments>
@@ -521,7 +521,9 @@ if mouse_check_button_released(mb_left)
 //Hold exit button
 if (MouseInBox(0,0,sprite_get_width(spr_menu),sprite_get_height(spr_menu)) and mouse_check_button_released(mb_left)) or menuCount &gt; 0
 {
-    menuCount += 1
+    //if RoomIsStage()
+       go_to_menu()
+    //menuCount += 1
 }
 else
     menuCount = 0
@@ -657,7 +659,7 @@ if menuCount = 0
         //show_message("unknown Room?!?#No ball on room start#obj_ctrl : Left Click Release")//debuggin
     }
     //restart
-    else if (/*double_click = true and */global.skipping = false and global.IsLevel or (global.platform = iOS and (room != MENUROOM or menuHidden = "hidden"))) and obj_ball.shot = true and global.buttonclicked = false
+    else if (/*double_click = true and */!MouseInBox(0,0,sprite_get_width(spr_menu),sprite_get_height(spr_menu)) and global.skipping = false and global.IsLevel or (global.platform = iOS and (room != MENUROOM or menuHidden = "hidden"))) and obj_ball.shot = true and global.buttonclicked = false
         room_restart()
     double_click = true
     
@@ -895,7 +897,7 @@ if !directory_exists(working_directory+"\Levels")
           <argument>
             <kind>1</kind>
             <string>
-if global.IsLevel and menuCount = 0
+if (global.IsLevel and menuCount = 0) or RoomIsStage()
 {
     alpha = 1//min(1,max(menuCount/30 + 1/10,(30-levelGameTime)/30,global.roomend))
     draw_set_alpha(1)
@@ -1029,11 +1031,11 @@ draw_set_font(Tahoma_R_14)
 if room != rm_splash
 {
     draw_set_color(c_white)
-    if room != MENUROOM
+    if room != MENUROOM and global.debuggin 
         draw_text(10,460,'FPS: '+string(fps) + '    Stage: '+string(Levels.stage))
     else if instance_number(obj_new_level) != 0
     {
-        draw_text(10,460,'FPS: '+string(fps) + '    Seed: '+string(obj_new_level.STARTSEED))
+        if global.debuggin draw_text(10,460,'FPS: '+string(fps) + '    Seed: '+string(obj_new_level.STARTSEED))
         draw_tip()
         if keyboard_check(vk_control)
         {
@@ -1223,7 +1225,8 @@ if global.IsLevel
         draw_set_valign(fa_middle)
         draw_set_halign(fa_middle)
         draw_set_font(fontCountdown)
-        draw_text(room_width/2-25,room_height/2-25,string(ceil((menuTime - menuCount)/room_speed)))
+        tmpfntscale = -menuCount/room_speed + floor(menuCount/room_speed)
+        draw_text(room_width/2-25,room_height/2-25,string(ceil((menuTime - menuCount)/room_speed)))//,1,1,0)
         draw_set_valign(fa_top)
         draw_set_halign(fa_left)
         draw_set_font(TutFontSmall)
