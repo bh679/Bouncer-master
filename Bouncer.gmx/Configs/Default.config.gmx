@@ -6,7 +6,7 @@
   <option_android_advertising_enable>0</option_android_advertising_enable>
   <option_android_advertising_key></option_android_advertising_key>
   <option_android_advertising_type>MoPub</option_android_advertising_type>
-  <option_android_amazon_iap>false</option_android_amazon_iap>
+  <option_android_amazon_iap>0</option_android_amazon_iap>
   <option_android_arch_armv5>True</option_android_arch_armv5>
   <option_android_arch_armv7>True</option_android_arch_armv7>
   <option_android_arch_mips>False</option_android_arch_mips>
@@ -94,8 +94,8 @@
   <option_ios_advertising_key></option_ios_advertising_key>
   <option_ios_advertising_type>iAds</option_ios_advertising_type>
   <option_ios_app_id>com.brennanhatton.bouncer</option_ios_app_id>
-  <option_ios_build_version>23</option_ios_build_version>
-  <option_ios_certificate>&lt; Press refresh to fetch certificate list from Mac&gt;</option_ios_certificate>
+  <option_ios_build_version>25</option_ios_build_version>
+  <option_ios_certificate>iPhone Distribution</option_ios_certificate>
   <option_ios_device_type>3</option_ios_device_type>
   <option_ios_display_name>Bouncer3.13.43</option_ios_display_name>
   <option_ios_flurry_enable>0</option_ios_flurry_enable>
@@ -112,7 +112,7 @@
   <option_ios_orient_landscape>true</option_ios_orient_landscape>
   <option_ios_orient_portrait>true</option_ios_orient_portrait>
   <option_ios_orientation>1</option_ios_orientation>
-  <option_ios_provisioning>&lt; Press refresh to fetch provisioning list from Mac&gt;</option_ios_provisioning>
+  <option_ios_provisioning>BouncerAdhoc - com.brennanhatton.bouncer</option_ios_provisioning>
   <option_ios_splash_png>Configs\Default\ios\splash.png</option_ios_splash_png>
   <option_ios_texture_page>1024</option_ios_texture_page>
   <option_ios_use_test_ads>0</option_ios_use_test_ads>
@@ -167,9 +167,9 @@
   <option_tizen_app_id>http://yourdomain/Bouncer</option_tizen_app_id>
   <option_tizen_build_version>0</option_tizen_build_version>
   <option_tizen_display_name>Bouncer</option_tizen_display_name>
-  <option_tizen_flurry_enable>false</option_tizen_flurry_enable>
+  <option_tizen_flurry_enable>0</option_tizen_flurry_enable>
   <option_tizen_flurry_id></option_tizen_flurry_id>
-  <option_tizen_google_analytics_enable>false</option_tizen_google_analytics_enable>
+  <option_tizen_google_analytics_enable>0</option_tizen_google_analytics_enable>
   <option_tizen_google_tracking_id></option_tizen_google_tracking_id>
   <option_tizen_icon>Configs\Default\tizen\icon48.png</option_tizen_icon>
   <option_tizen_major_version>1</option_tizen_major_version>
@@ -236,9 +236,9 @@
   <option_winphone_720_splash_image>Configs\Default\WinPhone\SplashScreenImage720.jpg</option_winphone_720_splash_image>
   <option_winphone_768_splash_image>Configs\Default\WinPhone\SplashScreenImage.jpg</option_winphone_768_splash_image>
   <option_winphone_advertising_appid></option_winphone_advertising_appid>
-  <option_winphone_advertising_enable>false</option_winphone_advertising_enable>
+  <option_winphone_advertising_enable>0</option_winphone_advertising_enable>
   <option_winphone_advertising_key></option_winphone_advertising_key>
-  <option_winphone_advertising_testing_enable>false</option_winphone_advertising_testing_enable>
+  <option_winphone_advertising_testing_enable>0</option_winphone_advertising_testing_enable>
   <option_winphone_advertising_type></option_winphone_advertising_type>
   <option_winphone_author>You</option_winphone_author>
   <option_winphone_build_version>0</option_winphone_build_version>
@@ -262,13 +262,13 @@
   <option_winphone_flip_small_front_image>Configs\Default\WinPhone\FlipSmallFront.png</option_winphone_flip_small_front_image>
   <option_winphone_flip_wide_back_image>Configs\Default\WinPhone\FlipWideBack.png</option_winphone_flip_wide_back_image>
   <option_winphone_flip_wide_front_image>Configs\Default\WinPhone\FlipWideFront.png</option_winphone_flip_wide_front_image>
-  <option_winphone_flurry_enable>false</option_winphone_flurry_enable>
+  <option_winphone_flurry_enable>0</option_winphone_flurry_enable>
   <option_winphone_flurry_id></option_winphone_flurry_id>
   <option_winphone_genre>1</option_winphone_genre>
-  <option_winphone_google_analytics_enable>false</option_winphone_google_analytics_enable>
+  <option_winphone_google_analytics_enable>0</option_winphone_google_analytics_enable>
   <option_winphone_google_tracking_id></option_winphone_google_tracking_id>
   <option_winphone_icon_image>Configs\Default\WinPhone\ApplicationIcon.png</option_winphone_icon_image>
-  <option_winphone_iconic_background_colour>#0</option_winphone_iconic_background_colour>
+  <option_winphone_iconic_background_colour>#000000</option_winphone_iconic_background_colour>
   <option_winphone_iconic_message></option_winphone_iconic_message>
   <option_winphone_iconic_small_image>Configs\Default\WinPhone\IconicSmall.png</option_winphone_iconic_small_image>
   <option_winphone_iconic_wide_content_1></option_winphone_iconic_wide_content_1>
