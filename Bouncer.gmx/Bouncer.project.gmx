@@ -169,6 +169,7 @@
           <sprite>sprites\spr_rubber</sprite>
           <sprite>sprites\spr_glass_shards</sprite>
           <sprite>sprites\spr_creat</sprite>
+          <sprite>sprites\spr_creat_old</sprite>
           <sprite>sprites\spr_magnet_north</sprite>
           <sprite>sprites\spr_magnet_south</sprite>
           <sprite>sprites\spr_rock</sprite>
@@ -306,8 +307,10 @@
       <background>background\bg_steelworks_forground3</background>
     </backgrounds>
     <background>background\bg_water_dark</background>
-    <background>background\background_2</background>
-    <background>background\background_1</background>
+    <background>background\background_swamp</background>
+    <background>background\background_purple</background>
+    <background>background\background_orange</background>
+    <background>background\background_green</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">

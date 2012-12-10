@@ -46,14 +46,14 @@ else if room = newstage0
     
     
 //background
-background[0] = background_1//bg_mountain
-background[1] = background_2//bg_mountain
-background[2] = background_1//bg_mountain
-background[3] = background_2//bg_mountain2
-background[4] = background_1//bg_mountain3
-background[5] = background_2//bg_mountain4
-background[6] = background_1//bg_mountain4
-background[7] = background_2//bg_mountain5
+background[0] = background_green//bg_mountain
+background[1] = background_orange//bg_mountain
+background[2] = background_swamp//bg_mountain
+background[3] = background_swamp//bg_mountain2
+background[4] = background_purple//bg_mountain3
+background[5] = background_purple//bg_mountain4
+background[6] = background_purple//bg_mountain4
+background[7] = background_purple//bg_mountain5
 
 //midground
 midground[0] = noone
