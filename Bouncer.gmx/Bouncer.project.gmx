@@ -306,6 +306,7 @@
       <background>background\bg_steelworks_forground3</background>
     </backgrounds>
     <background>background\bg_water_dark</background>
+    <background>background\background_2</background>
     <background>background\background_1</background>
   </backgrounds>
   <paths name="paths"/>

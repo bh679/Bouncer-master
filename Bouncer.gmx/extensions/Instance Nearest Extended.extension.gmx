@@ -25,7 +25,7 @@
           <name>instance_xth_nearest</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>73</id>
+          <id>79</id>
           <help>instance_xth_nearest(x,y,obj,n,variable,value,operator)</help>
           <returnType>2</returnType>
           <argCount>-1</argCount>
@@ -35,7 +35,7 @@
           <name>instance_xth_furthest</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>75</id>
+          <id>81</id>
           <help>instance_xth_furthest(x,y,obj,n,variable,value,operator)</help>
           <returnType>2</returnType>
           <argCount>-1</argCount>
@@ -45,7 +45,7 @@
           <name>instance_nth_furthest</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>77</id>
+          <id>83</id>
           <help>instance_nth_furthest(x,y,obj,n)</help>
           <returnType>2</returnType>
           <argCount>4</argCount>
@@ -60,7 +60,7 @@
           <name>instance_nth_nearest</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>79</id>
+          <id>85</id>
           <help>instance_nth_nearest(x,y,obj,n)</help>
           <returnType>2</returnType>
           <argCount>4</argCount>
@@ -75,7 +75,7 @@
           <name>evaluate</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>81</id>
+          <id>87</id>
           <help></help>
           <returnType>2</returnType>
           <argCount>-1</argCount>
@@ -85,7 +85,7 @@
           <name>instance_xth_number</name>
           <externalName></externalName>
           <kind>2</kind>
-          <id>83</id>
+          <id>89</id>
           <help>instance_xth_number(obj,variable,value,operator)</help>
           <returnType>2</returnType>
           <argCount>-1</argCount>
