@@ -126,7 +126,13 @@ reset = false
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>draw_tutorial()
+            <string>if instance_exists(obj_ctrl)
+{
+    if obj_ctrl.menuCount = 0
+       draw_tutorial()
+}
+else
+   draw_tutorial()
 </string>
           </argument>
         </arguments>

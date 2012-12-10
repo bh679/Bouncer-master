@@ -25,7 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>instance_destroy()//only for html5
+            <string>//instance_destroy()//only for html5
 
 reset_var()
 if instance_number(obj_new_level) = 2

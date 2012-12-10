@@ -165,96 +165,6 @@ glowcounter = 0
         </arguments>
       </action>
     </event>
-    <event eventtype="2" enumb="1">
-      <action>
-        <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
-        <userelative>0</userelative>
-        <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
-        <functionname></functionname>
-        <codestring></codestring>
-        <whoName>self</whoName>
-        <relative>0</relative>
-        <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>//draw exit
-/*var xx, yy;
-xx = 0
-yy = 0
-Emptys = 0
-//top
-repeat(floor(room_width/16))
-{
-    block = instance_place(xx,yy,wall_par)
-    if block != noone
-    {
-        if block = obj_sheild or block = obj_sheild_clear
-            xx+=16
-        EmptyX[0] = xx
-        Emptyy[0] = yy
-        Emptys += 1
-    }
-    xx+=16
-    
-}
-//right
-repeat(floor(room_height/16))
-{
-    block = instance_place(xx,yy,wall_par)
-    if block != noone
-    {
-        if block = obj_sheild or block = obj_sheild_clear
-            xx+=16
-        EmptyX[Emptys] = xx
-        Emptyy[Emptys] = yy
-        Emptys += 1
-    }
-    yy+=16
-    
-}
-//bottom
-xx = 0
-repeat(floor(room_width/16))
-{
-    block = instance_place(xx,yy,wall_par)
-    if block != noone
-    {
-        if block = obj_sheild or block = obj_sheild_clear
-            xx+=16
-        EmptyX[Emptys] = xx
-        Emptyy[Emptys] = yy
-        Emptys += 1
-    }
-    xx+=16
-    
-}
-xx = 0
-yy = 0
-//left
-repeat(floor(room_height/16))
-{
-    block = instance_place(xx,yy,wall_par)
-    if block != noone
-    {
-        if block = obj_sheild or block = obj_sheild_clear
-            xx+=16
-        EmptyX[Emptys] = xx
-        Emptyy[Emptys] = yy
-        Emptys += 1
-    }
-    yy+=16
-    
-}
-</string>
-          </argument>
-        </arguments>
-      </action>
-    </event>
     <event eventtype="2" enumb="0">
       <action>
         <libid>1</libid>
@@ -416,10 +326,10 @@ LEAFNO = 0
 
 
 //temps
-var ystartpoint, yendpoint, xstartpoint, xendpoint, ystartpoint, yendpoint, xstartpoint, xendpoint, parts, lgreen, lred, lblue, lrgreen, lrred, lrblue;
+//var ystartpoint, yendpoint, xstartpoint, xendpoint, ystartpoint, yendpoint, xstartpoint, xendpoint, parts, lgreen, lred, lblue, lrgreen, lrred, lrblue;
 
 //leafs
-if trees[stage] = bg_trees1
+/*if trees[stage] = bg_trees1
 {
     LEAFNO = 100
     ystartpoint[0] = 360
@@ -548,9 +458,9 @@ else if trees[stage] = bg_trees6
     lrred = 60 
     lrblue = 20
     
-}
+}*/
 //    show_message(string(leafindexs)) // debuggin
-
+/*
 random_set_seed(room)
     i = 0
     p = 0
@@ -570,7 +480,7 @@ random_set_seed(room)
         i+=1   
     }
 
-randomize()
+randomize()*/
 </string>
           </argument>
         </arguments>
@@ -758,7 +668,7 @@ LEAFNO = 0
 
 
 //temps
-var ystartpoint, yendpoint, xstartpoint, xendpoint, ystartpoint, yendpoint, xstartpoint, xendpoint, parts, lgreen, lred, lblue, lrgreen, lrred, lrblue;
+/*var ystartpoint, yendpoint, xstartpoint, xendpoint, ystartpoint, yendpoint, xstartpoint, xendpoint, parts, lgreen, lred, lblue, lrgreen, lrred, lrblue;
 
 //leafs
 if trees[stage] = bg_trees1
@@ -912,7 +822,7 @@ random_set_seed(room)
         i+=1   
     }
 
-randomize()
+randomize()*/
 </string>
           </argument>
         </arguments>

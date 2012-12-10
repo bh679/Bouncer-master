@@ -16,7 +16,7 @@ switch(os_type)
    global.platform = iOS
 switch(global.platform)
 {
-    case iOS: global.detail = GRAPHICLOW
+    case iOS: global.detail = GRAPHICHIGHEST
          break;
     case html5: global.detail = GRAPHICLOWEST
          break;

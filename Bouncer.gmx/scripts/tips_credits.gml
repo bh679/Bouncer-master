@@ -1,8 +1,11 @@
+global.tip[global.tips] = "The beautiful background art was done by Lisa Winters";
+global.tips += 1
+
 global.tip[global.tips] = "I would like to thank my little brother Aidan Hatton, for his help testing this game."
 global.tips += 1
 
 
-global.tip[global.tips] = "Special thanks to Epona Schweer & Convict Interactive. They are a inspired me to follow my dreams fo being a Game Developer :)"
+global.tip[global.tips] = "Special thanks to Epona Schweer & Convict Interactive.#They are a inspired me to follow my dreams fo being a Game Developer :)"
 global.tips += 1
 
 
@@ -18,7 +21,7 @@ global.tip[global.tips] = "The following people helped make this game possible. 
 global.tips += 1
 
 
-global.tip[global.tips] = "These guys helped test Bouncer: Liam McMillan, Alicia Temple, Chris Willcock, Callum Nichols, Mark Azzapardi, Douglas Heriot, Dilesh Mistrym, Daniel Delcore & Daniel Desnsi."
+global.tip[global.tips] = "These guys helped test Bouncer: Liam McMillan, Alicia Temple, Chris Willcock, Callum Nichols,#Mark Azzapardi, Douglas Heriot, Dilesh Mistrym, Daniel Delcore & Daniel Desnsi."
 global.tips += 1
 
 
@@ -28,7 +31,7 @@ global.tips += 1
 global.tip[global.tips] = "Spelling corrections had been made by: Ben Smith"
 global.tips += 1
 
-global.tip[global.tips] = "Sash Ristov is resposible for " + string(global.SashesTips) + " of these tips";
+global.tip[global.tips] = "Sash Ristov is resposible for " + string(global.SashesTips) + " of the tips";
 global.tips += 1
 
 /*

@@ -37,13 +37,10 @@ global.tips += 1
 global.tip[global.tips] = "If you like my game, send a donation to Brennanhatton.com"
 global.tips += 1
 
-global.tip[global.tips] = "All image as draw by me, Brennan Hatton."
+global.tip[global.tips] = "Find me on facebook. www.facebook.com/brennanhattongames"
 global.tips += 1
 
-global.tip[global.tips] = "This game costs how much you think its worth, please donate at Brennanhatton.com"
-global.tips += 1
-
-global.tip[global.tips] = "Find me on facebook. www.facebook.com/brennan.hatton"
+global.tip[global.tips] = "Twitter: @bghgames"
 global.tips += 1
 
 /*

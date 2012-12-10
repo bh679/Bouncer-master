@@ -29,6 +29,8 @@ with(obj_ctrl)
 {
     pathindex = 0
     pathmax = 0
+    levelGameTime = 0
+    downOnMenu = false
 }
 with(obj_new_level)
 {

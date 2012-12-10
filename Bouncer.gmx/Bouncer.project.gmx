@@ -239,6 +239,7 @@
     <sprites name="Display">
       <sprite>sprites\spr_regen</sprite>
       <sprite>sprites\spr_power_arrow</sprite>
+      <sprite>sprites\spr_menu</sprite>
     </sprites>
     <sprites name="background">
       <sprite>sprites\spr_windmill</sprite>
@@ -278,35 +279,6 @@
     <background>background\bg_nothing</background>
     <background>background\tile_wood</background>
     <background>background\click_to_contiune</background>
-    <background>background\bg_splash</background>
-    <background>background\bg_overgrown</background>
-    <backgrounds name="beginning">
-      <background>background\bg_peace</background>
-      <background>background\bg_mountain</background>
-      <background>background\bg_mountain2</background>
-      <background>background\bg_mountain3</background>
-      <background>background\bg_mountain4</background>
-      <background>background\bg_mountain5</background>
-      <background>background\bg_windmill</background>
-      <background>background\bg_trees1</background>
-      <background>background\bg_trees2</background>
-      <background>background\bg_trees3</background>
-      <background>background\bg_trees4</background>
-      <background>background\bg_trees5</background>
-      <background>background\bg_trees6</background>
-      <background>background\bg_fence1</background>
-      <background>background\bg_fence2</background>
-      <background>background\bg_square_house</background>
-      <background>background\bg_improvment</background>
-    </backgrounds>
-    <background>background\bg_lava</background>
-    <backgrounds name="industrial">
-      <background>background\bg_steelworks</background>
-      <background>background\bg_steelworks_forground</background>
-      <background>background\bg_steelworks_forground2</background>
-      <background>background\bg_steelworks_forground3</background>
-    </backgrounds>
-    <background>background\bg_water_dark</background>
     <background>background\background_swamp</background>
     <background>background\background_purple</background>
     <background>background\background_orange</background>
@@ -321,6 +293,7 @@
         <script>scripts\update_last_tip.gml</script>
         <script>scripts\new_tip.gml</script>
         <script>scripts\set_tips.gml</script>
+        <script>scripts\reshape_tip.gml</script>
         <script>scripts\draw_tip.gml</script>
         <scripts name="tips">
           <script>scripts\tips_help.gml</script>
@@ -460,6 +433,10 @@
       <scripts name="fog">
         <script>scripts\draw_fog.gml</script>
         <script>scripts\init_fog.gml</script>
+        <script>scripts\draw_generic_fog.gml</script>
+        <script>scripts\draw_fog_alpha.gml</script>
+        <script>scripts\draw_fog_focusy.gml</script>
+        <script>scripts\draw_fog_bellow.gml</script>
       </scripts>
     </scripts>
     <script>scripts\GetVineLength.gml</script>
@@ -479,6 +456,7 @@
     <script>scripts\go_to_menu.gml</script>
     <script>scripts\script30.gml</script>
     <script>scripts\script43.gml</script>
+    <script>scripts\script122.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Forte_options</font>
@@ -500,6 +478,7 @@
     <font>fonts\MenuFont</font>
     <font>fonts\MenuFontSmall</font>
     <font>fonts\MenuFontB</font>
+    <font>fonts\fontCountdown</font>
     <font>fonts\MenuFontSmallB</font>
     <fonts name="Tutorial">
       <font>fonts\TutFontBig</font>
@@ -512,8 +491,9 @@
       <objects name="block parts">
         <object>objects\obj_glass_shards</object>
         <object>objects\obj_leaves</object>
-        <object>objects\obj_solid_leaves</object>
         <object>objects\obj_creat_dead</object>
+        <object>objects\obj_solid_leaves</object>
+        <object>objects\obj_create_destroy</object>
       </objects>
       <object>objects\obj_dirt</object>
       <object>objects\obj_sheild</object>
@@ -566,6 +546,7 @@
     <object>objects\obj_ball</object>
     <object>objects\obj_deadball</object>
     <object>objects\obj_splash_brennanhattongames</object>
+    <object>objects\obj_credits</object>
   </objects>
   <timelines name="timelines">
     <timeline>timelines\timeline0</timeline>
@@ -744,7 +725,9 @@
       <room>rooms\stage_selectCustom</room>
     </rooms>
   </rooms>
-  <constants number="54">
+  <constants number="58">
+    <constant name="STRCREDITS">"Credits"</constant>
+    <constant name="STRHIDE">"Random"</constant>
     <constant name="_SCORE">"score"</constant>
     <constant name="_TIPS">"tips"</constant>
     <constant name="c_brown">make_color(126,64,0)</constant>
@@ -781,7 +764,7 @@
     <constant name="STRSTAGE">"Stage"</constant>
     <constant name="STRMENU">"Menu"</constant>
     <constant name="STRMORE">"More"</constant>
-    <constant name="STRUPDATE">"Update"</constant>
+    <constant name="STRUPDATE">"Website"</constant>
     <constant name="STRAUDIO">"Audio"</constant>
     <constant name="STRVIDEO">"Video"</constant>
     <constant name="STREXIT">"Exit"</constant>
@@ -799,6 +782,8 @@
     <constant name="c_dkblue">make_color_rgb(0,0,129)</constant>
     <constant name="c_brown">make_color_rgb(147,83,19)</constant>
     <constant name="version">1.9</constant>
+    <constant name="c_boxgreen2">make_color(39,49,39)</constant>
+    <constant name="c_boxgreen1">make_color(73,92,73)</constant>
   </constants>
   <help>
     <rtf>help.rtf</rtf>

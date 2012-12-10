@@ -1,3 +1,5 @@
+if room = MENUROOM
+   exit
 if global.platform = Windows or global.platform = Mac
 {
     draw_set_font(fontTipSmall)

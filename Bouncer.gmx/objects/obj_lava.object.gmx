@@ -92,7 +92,10 @@ up = false
 {
   up = true 
   if (y = room_height - sprite_height)
-    instance_create(x, room_height, obj_lava);
+  {
+    outside = instance_create(x, room_height, obj_lava);
+    outside.solid = true
+  }
 //  sprite_index = spr_lava
 }
 //else

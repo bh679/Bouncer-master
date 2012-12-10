@@ -1,5 +1,5 @@
 
-global.release = true
+global.release = false
 global.detail = 0
 setPlatform()
 set_tips()
@@ -16,7 +16,7 @@ global.save = false
 global.generate = true
 global.testmode = false
 global.previous_room = room
-global.voices = true
+global.voices = false
 global.backmusic = snd_stage1_peace
 sound_loop(global.backmusic)
 global.custom = false

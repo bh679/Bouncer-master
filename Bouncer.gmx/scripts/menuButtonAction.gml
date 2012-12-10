@@ -18,6 +18,7 @@ if tmpMenuItem = STROPTIONS
 {
     obj_menu.menuItem[0] = STRVIDEO
     obj_menu.menuItem[1] = STRAUDIO
+    obj_menu.menuItem[2] = STRCREDITS
     obj_menu.menuItem[3] = STRUPDATE
     obj_menu.menuItem[4] = STRMENU
     if global.release
@@ -26,7 +27,7 @@ if tmpMenuItem = STROPTIONS
         obj_menu.menuItem[5] = STRDEBUGGIN
 } else
 
-//options menu
+//stages menu
 if tmpMenuItem = STRSTAGES
 {
     obj_menu.menu = "stages"
@@ -36,6 +37,18 @@ if tmpMenuItem = STRSTAGES
     obj_menu.menuItem[3] = STRSTAGE + " 4"
     obj_menu.menuItem[4] = STRSTAGE + " 5"
     obj_menu.menuItem[5] = STRMENU
+} else
+
+//hide
+if tmpMenuItem = STRHIDE
+{
+    obj_menu.menuItem[0] = ''
+    obj_menu.menuItem[1] = ''
+    obj_menu.menuItem[2] = ''
+    obj_menu.menuItem[3] = ''
+    obj_menu.menuItem[4] = ''
+    obj_menu.menuItem[5] = ''
+    obj_menu.menu = "hidden"
 } else
 
 //exit game
@@ -59,10 +72,33 @@ if tmpMenuItem = STRMENU
     obj_menu.menuItem[2] = STRSTAGES
     obj_menu.menuItem[3] = STROPTIONS
     if global.platform != iOS and global.platform != html5
-       obj_menu.menuItem[4] = STREXIT
+    {
+       obj_menu.menuItem[4] = STRHIDE
+       obj_menu.menuItem[5] = STREXIT
+    }
+    else if global.platform != html5
+    {
+       obj_menu.menuItem[4] = STRHIDE
+       obj_menu.menuItem[5] = ''
+    }
     else
-       obj_menu.menuItem[4] = ''
+    {
+        obj_menu.menuItem[4] = ''
+        obj_menu.menuItem[5] = ''
+    }
+} else
+
+//credits
+if tmpMenuItem = STRCREDITS
+{
+    obj_menu.menuItem[0] = ''
+    obj_menu.menuItem[1] = ''
+    obj_menu.menuItem[2] = ''
+    obj_menu.menuItem[3] = ''
+    obj_menu.menuItem[4] = ''
     obj_menu.menuItem[5] = ''
+    obj_menu.menu = "credits"
+    instance_create(0,0,obj_credits)
 } else
 
 //auido menu
@@ -81,8 +117,17 @@ if tmpMenuItem = STRVIDEO
 {
     obj_menu.menuItem[0] = ''
     obj_menu.menuItem[1] = STRGRAPHICS
-    obj_menu.menuItem[2] = STRFULLSCREEN
-    obj_menu.menuItem[3] = STRMENU
+    if global.platform != iOS
+    {
+       obj_menu.menuItem[2] = STRFULLSCREEN
+       obj_menu.menuItem[3] = STRMENU
+    }
+    else
+    {
+       obj_menu.menuItem[2] = STRMENU
+       obj_menu.menuItem[3] = ''
+    }
+       
     if global.release
        obj_menu.menuItem[4] = ''
     else

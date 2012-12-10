@@ -41,6 +41,10 @@ soilIndexArray[1] = 6
 soilIndexArray[2] = 7
 soilIndexArray[3] = 8
 soilIndexArray[4] = 9
+
+menuCount = 0
+
+menuTime = 4*room_speed
 </string>
           </argument>
         </arguments>
@@ -269,7 +273,7 @@ if tipalpha &gt; 0.2
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string>levelGameTime += 1
 global.cogangle += 1
 
 </string>
@@ -322,6 +326,7 @@ global.cogangle += 1
  *  - Save progress to Disk
  *  - Graphics quality 
  *  - Force Restart Game
+ *  - In game Menu button
  */
 
 ///////////////////////////////////////////////////////////////
@@ -488,7 +493,7 @@ if keyboard_check(GRAPHICSKEY)
 
 
 ///////////////////////////////////////////////////////////////
-///////////////////////////////////change GRAPHICS detail
+///////////////////////////////////FORCERESTARTKEY
 //////////////////////////////////////////////////////////////
 
 //Press f11
@@ -496,6 +501,36 @@ if keyboard_check(FORCERESTARTKEY)
 {
     game_restart();
 }
+
+
+
+
+
+///////////////////////////////////////////////////////////////
+///////////////////////////////////exit to menu
+//////////////////////////////////////////////////////////////
+
+if mouse_check_button_released(mb_left)
+{
+    menuCount = 0
+}
+    
+//if MouseInBox(0,0,sprite_get_width(spr_menu)*2,sprite_get_height(spr_menu)*2) and mouse_check_button_pressed(mb_left)
+//   downOnMenu = true
+    
+//Hold exit button
+if (MouseInBox(0,0,sprite_get_width(spr_menu),sprite_get_height(spr_menu)) and mouse_check_button_released(mb_left)) or menuCount &gt; 0
+{
+    menuCount += 1
+}
+else
+    menuCount = 0
+    
+
+//quit to main menu
+if menuCount &gt;= menuTime
+    go_to_menu()
+   
 
 
 </string>
@@ -582,49 +617,53 @@ if global.IsLevel and global.testmode = false and no_tutorial = 0 and global.ski
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//in the menu room
-if instance_exists(obj_menu)
-   menuHidden = obj_menu.menu
-else
-   menuHidden = "no menu"
-
-//ball is off the screen
-if global.roomend = true and global.buttonclicked = false
+            <string>//not exiting
+if menuCount = 0
 {
-    //custom level
-    if global.custom = true 
-    {
-        with(obj_ball)
-            {restart_custom()}
-    }
-    //normal level
+    //in the menu room
+    if instance_exists(obj_menu)
+       menuHidden = obj_menu.menu
     else
+       menuHidden = "no menu"
+    
+    //ball is off the screen
+    if global.roomend = true and global.buttonclicked = false
     {
-        if global.load = true
+        //custom level
+        if global.custom = true 
         {
-            if loaded = true
-            {
-                LoadCustom(level[loadedlevel]) 
-                reset_var()
-            }
+            with(obj_ball)
+                {restart_custom()}
         }
-        //level complete
+        //normal level
         else
-            nextroom()
+        {
+            if global.load = true
+            {
+                if loaded = true
+                {
+                    LoadCustom(level[loadedlevel]) 
+                    reset_var()
+                }
+            }
+            //level complete
+            else
+                nextroom()
+        }
     }
+    //unknown room
+    else if instance_number(obj_ball) = 0
+    {
+        //show_message("unknown Room?!?#No ball on room start#obj_ctrl : Left Click Release")//debuggin
+    }
+    //restart
+    else if (/*double_click = true and */global.skipping = false and global.IsLevel or (global.platform = iOS and (room != MENUROOM or menuHidden = "hidden"))) and obj_ball.shot = true and global.buttonclicked = false
+        room_restart()
+    double_click = true
+    
+    mouseDown = 0
+    global.buttonclicked = false
 }
-//unknown room
-else if instance_number(obj_ball) = 0
-{
-    //show_message("unknown Room?!?#No ball on room start#obj_ctrl : Left Click Release")//debuggin
-}
-//restart
-else if (/*double_click = true and */global.skipping = false and global.IsLevel or (global.platform = iOS and (room != MENUROOM or menuHidden = "hidden"))) and obj_ball.shot = true and global.buttonclicked = false
-    room_restart()
-double_click = true
-
-mouseDown = 0
-global.buttonclicked = false
 </string>
           </argument>
         </arguments>
@@ -652,8 +691,8 @@ global.buttonclicked = false
 else
     ballReady = true
 //hold down touch
-if mouseDown &gt; SEC and ballReady and room != MENUROOM and global.platform = iOS
-   go_to_menu()
+//if mouseDown &gt; SEC and ballReady and room != MENUROOM and global.platform = iOS
+//   go_to_menu()
 
 mouseDown += 1
 
@@ -733,7 +772,8 @@ if !(global.platform = iOS or global.platform = HTML5)
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>room_start()
+            <string>menuCount = 0
+room_start()
 if instance_number(obj_ctrl) &gt; 1
     instance_destroy()
 repeat(2)
@@ -832,6 +872,35 @@ global.load = false
 
 if !directory_exists(working_directory+"\Levels")
             directory_create(working_directory+"\Levels")
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="64">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>
+if global.IsLevel and menuCount = 0
+{
+    alpha = 1//min(1,max(menuCount/30 + 1/10,(30-levelGameTime)/30,global.roomend))
+    draw_set_alpha(1)
+    draw_sprite_ext(spr_menu,0,0,0,1,1,0,noone,alpha)
+}
 </string>
           </argument>
         </arguments>
@@ -1139,6 +1208,27 @@ if (keyboard_check(vk_control) or keyboard_check(vk_shift)) and global.IsLevel
 }
 else
     global.skipping = false
+}
+
+if global.IsLevel
+{
+    if menuCount &gt; 0
+    {
+        alpha = min(1,(menuCount)/30)
+        draw_set_color(c_black)
+        draw_set_alpha(alpha)
+        draw_rectangle(0,0,room_width,room_height,false)
+        draw_set_alpha(alpha*1.5)
+        draw_set_color(c_white)
+        draw_set_valign(fa_middle)
+        draw_set_halign(fa_middle)
+        draw_set_font(fontCountdown)
+        draw_text(room_width/2-25,room_height/2-25,string(ceil((menuTime - menuCount)/room_speed)))
+        draw_set_valign(fa_top)
+        draw_set_halign(fa_left)
+        draw_set_font(TutFontSmall)
+        draw_text(0,0,"Touch to cancel")
+    }
 }
 </string>
           </argument>

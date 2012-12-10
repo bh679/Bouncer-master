@@ -66,8 +66,14 @@ menuItem[0] = ''
 menuItem[1] = STRPLAY
 menuItem[2] = STRSTAGES
 menuItem[3] = STROPTIONS
-menuItem[4] = STREXIT
-menuItem[5] = ''
+if global.platform != html5
+   menuItem[4] = STRHIDE
+else
+   menuItem[4] = ''
+if global.platform != iOS and global.platform != html5
+   menuItem[5] = STREXIT
+else
+   menuItem[5] = ''
 
 stageDisplayed = 0
 
@@ -80,6 +86,19 @@ scrolVisiblity = 0.3
 highlightScroll = false
 minScrollY = menuItemY[0]
 maxScrollY = menuItemY[0] + (menuItemHeight*2+menuGap)*2
+
+xscale = room_width/window_get_width()
+yscale = room_height/window_get_height()
+
+scalefactor = 1
+do
+{
+    scalefactor += 0.1
+    newyscale = yscale * scalefactor
+}until(newyscale &lt; 1);
+
+yscale *= scalefactor
+xscale *= scalefactor
 </string>
           </argument>
         </arguments>
@@ -334,18 +353,31 @@ draw_set_color(c_white)
 
 //hide/show
 //mouse is over
-if MouseInBox(64-48,2,64+48,18)
+if global.debuggin draw_rectangle(64-sprite_get_width(spr_menu)*xscale/2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale,true)
+if MouseInBox(64-sprite_get_width(spr_menu)*xscale/2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale)
 {
     draw_set_font(MenuFontSmallB)
     if mouse_check_button_pressed(mb_left)
     {
-        if menu = "hidden"
+        if menu = "hidden" or menu = "credits"
         {
+            if menu = "credits"
+            {
+               with(obj_credits){instance_destroy()}
+            }
             menu = "main"
-            menuItem[0] = STRPLAY
-            menuItem[1] = STRSTAGES
-            menuItem[2] = STROPTIONS
-            menuItem[3] = STREXIT
+            menuItem[0] = ''
+            menuItem[1] = STRPLAY
+            menuItem[2] = STRSTAGES
+            menuItem[3] = STROPTIONS
+            if global.platform != html5
+               menuItem[4] = STRHIDE
+            else
+               menuItem[4] = ''
+            if global.platform != iOS and global.platform != html5
+               menuItem[5] = STREXIT
+            else
+               menuItem[5] = ''
         }
         else
             menu = "hidden"
@@ -356,7 +388,8 @@ else
         
 //drawing
 //regerate 
-if MouseInBox(64+64+16,0,64+64+16+16,16)
+if global.debuggin draw_rectangle(64+sprite_get_width(spr_menu)*xscale,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale,true)
+if MouseInBox(64+sprite_get_width(spr_menu)*xscale,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale)
 {
     regenAngle += 10
     if regenAngle &gt; 360
@@ -376,21 +409,22 @@ else if regenAngle &gt; 0
 }
 
    
-draw_sprite_ext(spr_regen,1,64+64+16+8,8,0.5,0.5,-regenAngle,noone,1)
-draw_sprite_ext(spr_regen,0,64+64+16+8,8,0.5,0.5,-regenAngle,noone,backgroundAlpha)
+//draw_sprite_ext(spr_regen,1,64+sprite_get_width(spr_menu),sprite_get_height(spr_regen)/2,xscale,yscale,-regenAngle,noone,1)
+draw_sprite_ext(spr_regen,0,64+sprite_get_width(spr_menu),sprite_get_height(spr_regen)/2-4,xscale,yscale,0,noone,1-backgroundAlpha)
 
 draw_set_halign(fa_center); 
-if menu = "hidden"
+    draw_set_font(MenuFont)
+if menu = "hidden" or menu = "credits"
 {
-    draw_text_shadow(64,2,"Show menu",c_white,c_black,1)
-    if backgroundAlpha &gt; 0
+    draw_sprite_ext(spr_menu,0,64-sprite_get_width(spr_menu)/2,0,xscale,yscale,0,noone,1)//draw_text_shadow(64,2,"Show menu",c_white,c_black,1)
+    if backgroundAlpha &gt; 0 and menu = "hidden"
        backgroundAlpha -= 0.1
 }
 else //not hidden
 {
     if backgroundAlpha &lt; 1
        backgroundAlpha += 0.1
-    draw_text_shadow(64,2,"Hide menu",c_white,c_black,1)
+    //draw_text_shadow(64,2,"Hide menu",c_white,c_black,1)
  
     //draw menu items
     _i = 0
