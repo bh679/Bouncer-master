@@ -269,8 +269,8 @@ ExitPos = floor(random(room_height/BLOCKSIZE+room_width/BLOCKSIZE-2))
 ExitSize = floor(random(15)+3)
 
 //ball position
-BALLX = random(room_width/2-BLOCKSIZE*2) + BLOCKSIZE*2
-BALLY = random(room_height/2-BLOCKSIZE*2) + room_height/2 - BLOCKSIZE
+BALLX = random(room_width/2-BLOCKSIZE*3) + BLOCKSIZE*3
+BALLY = floor((random(room_height/2-BLOCKSIZE*2) + room_height/2 - BLOCKSIZE)/BLOCKSIZE)*BLOCKSIZE
 
 
 

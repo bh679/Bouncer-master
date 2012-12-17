@@ -52,12 +52,10 @@ if obj_ctrl.DisplayEndStats
     tmpY += 24
     tmpY += 24
     draw_set_font(fnt_highscore)
-    //draw_text_shadow(150,10,string(Levels.name[Levels.roomindex]),c_white,c_black,1)
     draw_text_shadow(RecX1+padding,StatsY+tmpY,"Best",c_yellow,c_black,1)
     draw_text_shadow(RecMid,StatsY+tmpY,"Last Round",c_yellow,c_black,1)
     
     draw_set_font(fnt_highscoreSmall)
-    
     tmpY += 28
     draw_text_shadow(RecX1+padding,StatsY+tmpY,"Time: " + string(global.besttime/30),c_white,c_black,1)
     draw_text_shadow(RecMid,StatsY+tmpY,"Time: " + string(global.time/30),c_white,c_black,1)

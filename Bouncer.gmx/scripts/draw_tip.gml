@@ -91,23 +91,47 @@ else if global.platform = iOS
         tmpY += 0
         if RecY2 > StatsY+tmpY + detailsheight
         {
-            draw_text_shadow(RecX1+padding,StatsY+tmpY,"Time: " + string(global.besttime/30),c_white,c_black,1)
-            draw_text_shadow(RecMid,StatsY+tmpY,"Time: " + string(global.time/30),c_white,c_black,1)
+            time = global.time/30
+            if time <= 0
+               time = '~'
+            bestTime = global.besttime/30
+            if bestTime <= 0
+               bestTime = time
+            draw_text_shadow(RecX1+padding,StatsY+tmpY,"Time: " + string(bestTime),c_white,c_black,1)
+            draw_text_shadow(RecMid,StatsY+tmpY,"Time: " + string(time),c_white,c_black,1)
             tmpY += detailsheight
             if RecY2 > StatsY+tmpY + detailsheight
             {
-                draw_text_shadow(RecX1+padding,StatsY+tmpY,"Distance: "+string(global.bestdis),c_white,c_black,1)
-                draw_text_shadow(RecMid,StatsY+tmpY,"Distance: "+string(global.dis),c_white,c_black,1)
+                distance = global.dis
+                if distance <= 0
+                   distance = '~'
+                bestDistance = global.bestdis
+                if bestDistance <= 0
+                   bestDistance = distance
+                draw_text_shadow(RecX1+padding,StatsY+tmpY,"Distance: "+string(bestDistance),c_white,c_black,1)
+                draw_text_shadow(RecMid,StatsY+tmpY,"Distance: "+string(distance),c_white,c_black,1)
                 tmpY += detailsheight
                 if RecY2 > StatsY+tmpY + detailsheight
                 {
-                    draw_text_shadow(RecX1+padding,StatsY+tmpY,"Bounces: "+string(global.bestbounces),c_white,c_black,1)
-                    draw_text_shadow(RecMid,StatsY+tmpY,"Bounces: "+string(global.bounces),c_white,c_black,1)
+                    bounces = global.bestbounces
+                    if bounces < 0
+                       bounces = '~'
+                    bestBounces = global.bounces
+                    if bestBounces < 0
+                       bestBounces = bounces
+                    draw_text_shadow(RecX1+padding,StatsY+tmpY,"Bounces: "+string(bestBounces),c_white,c_black,1)
+                    draw_text_shadow(RecMid,StatsY+tmpY,"Bounces: "+string(bounces),c_white,c_black,1)
                     tmpY += detailsheight
                     if RecY2 > StatsY+tmpY + detailsheight
                     {
-                        draw_text_shadow(RecX1+padding,StatsY+tmpY,"Score: "+string(global.bestscore),c_white,c_black,1)
-                        draw_text_shadow(RecMid,StatsY+tmpY,"Score: "+string(global._score),c_white,c_black,1)
+                        _score = global._score
+                        if _score <= 0
+                           _score = '~'
+                        bestScore = global.bestscore
+                        if bestScore <= 0
+                           bestScore = _score
+                        draw_text_shadow(RecX1+padding,StatsY+tmpY,"Score: "+string(bestScore),c_white,c_black,1)
+                        draw_text_shadow(RecMid,StatsY+tmpY,"Score: "+string(_score),c_white,c_black,1)
                         tmpY += detailsheight
                         if RecY2 > StatsY+tmpY + detailsheight
                         {

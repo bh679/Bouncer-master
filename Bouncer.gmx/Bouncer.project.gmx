@@ -264,6 +264,7 @@
       <sprite>sprites\spr_ball_waiting</sprite>
       <sprite>sprites\spr_ball_read</sprite>
       <sprite>sprites\sprite169</sprite>
+      <sprite>sprites\sprite108</sprite>
     </sprites>
     <sprite>sprites\spr_lavaPart</sprite>
     <sprite>sprites\spr_explosion</sprite>
@@ -457,6 +458,7 @@
     <script>scripts\script30.gml</script>
     <script>scripts\script43.gml</script>
     <script>scripts\script122.gml</script>
+    <script>scripts\MouseOnLevelSelectMenuButton.gml</script>
   </scripts>
   <fonts name="fonts">
     <font>fonts\Forte_options</font>
@@ -479,6 +481,7 @@
     <font>fonts\MenuFontSmall</font>
     <font>fonts\MenuFontB</font>
     <font>fonts\fontCountdown</font>
+    <font>fonts\fontStageSelect</font>
     <font>fonts\MenuFontSmallB</font>
     <fonts name="Tutorial">
       <font>fonts\TutFontBig</font>

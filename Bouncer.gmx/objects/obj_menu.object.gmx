@@ -25,8 +25,7 @@
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
-stages = 9
+            <string>stages = 9
 width = 100
 ygap = 20
 Levels.roomindex = 0
@@ -85,7 +84,9 @@ menuLength = (menuItemY[0]-menuGap/2 - menuItemY[3]+menuItemHeight+menuGap/2)/(s
 scrolVisiblity = 0.3
 highlightScroll = false
 minScrollY = menuItemY[0]
-maxScrollY = menuItemY[0] + (menuItemHeight*2+menuGap)*2
+
+menuScrollItemsLength = 3
+maxScrollY = menuItemY[0] + (menuItemHeight*2+menuGap)*menuScrollItemsLength
 
 xscale = room_width/window_get_width()
 yscale = room_height/window_get_height()
@@ -99,6 +100,8 @@ do
 
 yscale *= scalefactor
 xscale *= scalefactor
+
+moveScrollbar = false
 </string>
           </argument>
         </arguments>
@@ -256,14 +259,23 @@ if menu = "stages"
         highlightScroll = true
     }
     
+    if !mouse_check_button(mb_left)
+       moveScrollbar = false
+    
     //mouse over
-    if MouseInBox(room_width/2+width,menuItemY[0]-menuGap/2,room_width/2+width+10+20,menuItemY[3]+menuItemHeight)
+    if MouseInBox(room_width/2+width,menuItemY[0]-menuGap/2,room_width/2+width+10+20,menuItemY[3]+menuItemHeight) or moveScrollbar
     {
         //click
         if mouse_check_button(mb_left)
         {
+            moveScrollbar = true
             if (mouse_y - menuItemY[0]) &gt; 0
-               stageDisplayed = floor((((mouse_y - menuItemY[0])*2) / ((menuItemHeight*2+menuGap/2)) mod (stages - 4)))
+            {
+               if ((mouse_y - menuItemY[0])*2) / ((menuItemHeight*2+menuGap/2)) &lt; stages - 4
+                  stageDisplayed = floor((((mouse_y - menuItemY[0])*2) / (menuScrollItemsLength*(menuItemHeight+menuGap/2)) mod (stages - 4)))
+               else
+                   stageDisplayed = stages - 5
+            }       
             else
                 stageDisplayed = 0
                 
@@ -339,7 +351,7 @@ if room != MENUROOM
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>
+            <string> 
 
 
 //background
@@ -353,8 +365,8 @@ draw_set_color(c_white)
 
 //hide/show
 //mouse is over
-if global.debuggin draw_rectangle(64-sprite_get_width(spr_menu)*xscale/2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale,true)
-if MouseInBox(64-sprite_get_width(spr_menu)*xscale/2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale)
+if global.debuggin draw_rectangle(64-sprite_get_width(spr_menu)*xscale/2*1.2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale,true)
+if MouseInBox(64-sprite_get_width(spr_menu)*xscale/2*1.2,0,64+sprite_get_width(spr_menu)/2*xscale,sprite_get_height(spr_menu)*yscale)
 {
     draw_set_font(MenuFontSmallB)
     if mouse_check_button_pressed(mb_left)
@@ -388,8 +400,8 @@ else
         
 //drawing
 //regerate 
-if global.debuggin draw_rectangle(64+sprite_get_width(spr_menu)*xscale,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale,true)
-if MouseInBox(64+sprite_get_width(spr_menu)*xscale,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale)
+if global.debuggin draw_rectangle(64+sprite_get_width(spr_menu)*xscale*0.8,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale,true)
+if MouseInBox(64+sprite_get_width(spr_menu)*xscale*0.8,0,64+sprite_get_width(spr_menu)*xscale+sprite_get_width(spr_regen)*xscale,sprite_get_height(spr_regen)*yscale)
 {
     regenAngle += 10
     if regenAngle &gt; 360
@@ -443,6 +455,7 @@ else //not hidden
             {
                 draw_set_color(c_red)
                 draw_set_alpha(0.2)
+                
                 draw_rectangle(room_width/2-width,menuItemY[_i]-menuGap/2,room_width/2+width,menuItemY[_i]+menuItemHeight+menuGap/2,false)
                 draw_set_alpha(1)
             }
@@ -473,7 +486,11 @@ else //not hidden
     {
         draw_set_alpha(0.1+scrolVisiblity)
         draw_set_color(c_white)
-        draw_rectangle(room_width/2+width+10,menuItemY[0]-menuGap/2,room_width/2+width+10+10,menuItemY[3]+menuItemHeight,true)
+        //if global.platform = iOS
+        //   draw_rectangle(room_width/2+width+10,menuItemY[0]-menuGap/2,room_width/2+width+10+10,menuItemY[3]+menuItemHeight,true)
+       //else
+           draw_rectangle(room_width/2+width+10,minScrollY-menuLength/2,room_width/2+width+10+10,maxScrollY++menuLength/2,true)
+           
         draw_set_alpha(0.2+scrolVisiblity*2)
         //move
         if mouse_check_button(mb_left)
